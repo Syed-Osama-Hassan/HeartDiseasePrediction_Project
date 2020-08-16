@@ -1,0 +1,162 @@
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Heart Disease Prediction</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <div class="container">
+            <h2>Heart Validation Form</h2>
+            
+            <form action="{{url_for('main')}}"  method="POST">
+              <div class="form-group">
+                <label for="age">Age: </label>
+                <input type="number" class="form-control" id="age" placeholder="Enter your age" name="age" required>
+              </div>
+
+              <div class="form-group">
+                <label for="sex">Sex:</label>
+                <input type="number" class="form-control" id="sex" placeholder="male = 1, female =0" name="sex" required>
+              </div>
+              <div class="form-group">
+                <label for="cp1">Chest Pain1:</label>
+                <input type="number" class="form-control" id="cp1" placeholder="Enter 1= atypical angina, 0 = otherwise" name="cp1" required>
+              </div>
+              <div class="form-group">
+                <label for="cp2">Chest Pain2:</label>
+                <input type="number" class="form-control" id="cp2" placeholder="Enter 1=non anginal pain, 0 = otherwise" name="cp2" required>
+              </div>
+
+              <div class="form-group">
+                <label for="cp3">Chest Pain3:</label>
+                <input type="number" class="form-control" id="cp3" placeholder="Enter 1= asymptomatic, 0 = otherwise" name="cp3" required>
+              </div>
+
+              <div class="form-group">
+                <label for="trestbps">Resting Blood Pressure:</label>
+                <input type="number" class="form-control" id="trestbps" placeholder="Enter Resting Blood Pressure" name="trestbps" required>
+              </div>
+              <div class="form-group">
+                <label for="chol">Cholesterol:</label>
+                <input type="number" class="form-control" id="chol" placeholder="Enter Cholesterol" name="chol" required>
+              </div>
+              <div class="form-group">
+                <label for="fbs">Fasting Blood Sugar:</label>
+                <input type="number" class="form-control" id="fbs" placeholder="Enter Fasting Blood Sugar" name="fbs" required>
+                
+              </div>
+
+              <div class="form-group">
+                <label for="restecg">Resting electrocardiographic measurement:</label>
+                <input type="number" class="form-control" id="restecg" placeholder="Enter 0 = normal, 1 = having ST-T wave abnormality, 2 = showing probable or definite left ventricular hypertrophy by Estes' criteria" name="restecg" required>
+                
+              </div>
+
+              <div class="form-group">
+                <label for="thalach">Person's maximum heart rate achieved:</label>
+                <input type="number" class="form-control" id="thalach" placeholder="Enter max heart rate achieved" name="thalach" required>
+                
+              </div>
+              <div class="form-group">
+                <label for="exang">Exercise induced angina:</label>
+                <input type="number" class="form-control" id="exang" placeholder="Enter 1 = Yes, 0 = No" name="exang" required>
+              
+              </div>
+
+              <div class="form-group">
+                <label for="oldpeak">ST depression induced by exercise relative to rest:</label>
+                <input type="number" step= 0.1 class="form-control" id="oldpeak" placeholder="Enter ST depression" name="oldpeak" required>
+                
+              </div>
+              <div class="form-group">
+                <label for="slope0">Slope0 of the peak exercise ST segment:</label>
+                <input type="number" class="form-control" id="slope0" placeholder="Enter 1= upslopping, 0= otherwise" name="slope0" required>
+                
+              </div>
+
+              <div class="form-group">
+                <label for="slope1">Slope1 of the peak exercise ST segment:</label>
+                <input type="number" class="form-control" id="slope1" placeholder="Enter 1= flat, 0=otherwise" name="slope1" required>
+                
+              </div>
+
+              <div class="form-group">
+                <label for="slope2">Slope2 of the peak exercise ST segment:</label>
+                <input type="number" class="form-control" id="slope2" placeholder="Enter 1= donwnslopping, 0 =otherwise" name="slope2" required>
+                
+              </div>
+
+              <div class="form-group">
+                <label for="ca1">The number of major vessels (0-3)CA1:</label>
+                <input type="number" class="form-control" id="ca1" placeholder="Enter 1 or 0" name="ca1" required>
+                
+              </div>
+
+              <div class="form-group">
+                <label for="ca2">The number of major vessels (0-3)CA2:</label>
+                <input type="number" class="form-control" id="ca2" placeholder="Enter 1 or 0" name="ca2" required>
+                
+              </div>
+
+              <div class="form-group">
+                <label for="ca3">The number of major vessels (0-3)CA3:</label>
+                <input type="number" class="form-control" id="ca3" placeholder="Enter 1 or 0" name="ca3" required>
+                
+              </div>
+              <div class="form-group">
+                <label for="ca4">The number of major vessels (0-3)CA4:</label>
+                <input type="number" class="form-control" id="ca4" placeholder="Enter 1 or 0" name="ca4" required>
+                
+              </div>
+              <div class="form-group">
+                <label for="thal0">Thalassemia0:</label>
+                <input type="number" class="form-control" id="thal0" placeholder="Enter 1 = normal; 0 = otherwise" name="thal0" required>
+                
+              </div>
+              <div class="form-group">
+                <label for="thal1">Thalassemia1:</label>
+                <input type="number" class="form-control" id="thal1" placeholder="Enter 1 = normal; 0 = otherwise" name="thal1" required>
+                
+              </div>
+
+            
+            <div class="form-group">
+              <label for="thal2">Thalassemia2:</label>
+              <input type="number" class="form-control" id="thal2" placeholder="Enter 1 = fixed defect; 0 = otherwise" name="thal2" required>
+              
+            </div>
+
+          
+          <div class="form-group">
+            <label for="thal3">Thalassemia3:</label>
+            <input type="number" class="form-control" id="thal3" placeholder="Enter 1 = reversible defect; 0 = otherwise" name="thal3" required>
+            
+          </div>
+
+
+
+              <div class="form-group form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" name="remember" required> I agree.
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">Check this checkbox to continue.</div>
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+          <br>
+          <div class="result" align="center">
+            <h3> Output: {{result}} </h3>  
+          </div>
+
+    </body>
+    </html>
